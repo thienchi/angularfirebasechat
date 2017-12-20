@@ -1,0 +1,63 @@
+﻿	<!DOCTYPE html>
+	<html ng-app="app">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<title>Something fun</title>
+		<!-- build:css css/vendor.min.css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<link href="app/app-content/app.css" rel="stylesheet" />
+		<!-- endbuild -->
+		<!-- build:js js/vendor.min.js -->
+
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+		<script src="bower_components/firebase/firebase.js"></script>
+		<script src="bower_components/angularfire/dist/angularfire.js"></script>
+		<script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+		<script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+		<script src="bower_components/md5/build/md5.min.js"></script>
+		<script src="bower_components/crypto-js/crypto-js.js"></script>
+		<!-- endbuild -->
+	</head>
+	<body>
+
+	<div class="container-fluid">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+			<div class="container-fluid" ng-view>
+			</div>
+		</div>
+	</div>
+	<!-- build:js js/chat.min.js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/app-services/authentication.service.js"></script>
+	<script src="app/app-services/flash.service.js"></script>
+
+	<script src="app/app-services/user.service.local-storage.js"></script>
+
+	<script src="app/home/upload-image.controller.js"></script>
+
+
+	<script src="bower_components/firebase/firebase.js"></script>
+	<script src="bower_components/angularfire/dist/angularfire.js"></script>
+	<script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+	<script src="app/home/home.controller.js"></script>
+	<script src="app/login/login.controller.js"></script>
+	<script src="app/register/register.controller.js"></script>
+
+
+	<script src="bower_components/firebase/firebase.js"></script>
+	<script src="bower_components/angularfire/dist/angularfire.js"></script>
+	<script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+	<!-- endbuild -->
+
+	</body>
+	</html>

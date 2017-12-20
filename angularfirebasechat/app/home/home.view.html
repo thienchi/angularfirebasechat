@@ -1,0 +1,46 @@
+﻿<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#!/login">Log out</a>
+    <a href="#!/history">History</a>
+    <div ng-include="'app/home/upload-image.html'"></div>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Mỹ nhân conversation</span>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+<div ng-app="app">
+<div ng-controller="HomeController">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Mỹ nhân conversation 1.2.0</div>
+        <div class="panel-body" style="overflow-y: scroll;">
+            <div id="chatBox" style="padding: 10px; border: black 1px solid">
+                <ul class="list-group" pagination-id="chatbox" ng-repeat="chatMessage in chatMessages | limitTo:-10">
+                    <li class="list-group-item">
+                        <span class="badge">{{chatMessage.time}}</span>
+	                    <b style="color:{{name==chatMessage.name ? 'Red' : 'Green'}}">{{chatMessage.name}}</b>: {{chatMessage.message}}
+                    </li>
+                </ul>
+
+            </div>
+
+            <br/>
+            <form method='post'><input type='hidden' name='form-name' value='form 1' />
+                Name: <b style="color:red">{{name}} </b><br/>
+                <input class="form-control input-lg form-control" ng-model="chatMes" class=""/>
+                <br/>
+                <button class="btn btn-primary" type="submit" ng-click="sendChat()" >Send</button>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+</div>

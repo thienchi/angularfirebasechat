@@ -1,0 +1,37 @@
+﻿
+<p><a href="#!/login" class="btn btn-primary" style="float: right">Log out</a>
+    <a href="#!/" class="btn btn-primary">Chat</a></p>
+<div ng-app="app">
+<h1 id="quote-headline"></h1>
+
+<div ng-controller="HomeController">
+    <div class="panel panel-primary">
+        <div class="panel-heading">conversation 1.2.0</div>
+        <div class="panel-body" style="overflow-y: scroll;">
+            <div id="chatBox" style="padding: 10px; border: black 1px solid">
+                <ul class="list-group" pagination-id="chatbox" dir-paginate="chatMessage in chatMessages | itemsPerPage:10">
+                    <li class="list-group-item">
+                        <span class="badge">{{chatMessage.time}}</span>
+                        <b style="color:{{name==chatMessage.name ? 'Red' : 'Green'}}">{{chatMessage.name}}</b>: {{chatMessage.message}}
+                    </li>
+                </ul>
+
+            </div>
+            <dir-pagination-controls pagination-id="chatbox"
+                                     max-size="20" direction-links="true" boundary-links="true">
+
+            </dir-pagination-controls>
+            <br/>
+            <form method='post'><input type='hidden' name='form-name' value='form 1' />
+                Name: <b style="color:red">{{name}} </b><br/>
+                <input class="form-control input-lg form-control" ng-model="chatMes" class=""/>
+                <br/>
+                <button class="btn btn-primary" type="submit" ng-click="sendChat()" >Quick reply</button>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+</div>
